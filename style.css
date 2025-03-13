@@ -1,0 +1,25 @@
+body {
+    height: 100vh;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0deg, rgb(211, 211, 211) 23.8%, rgb(221, 224, 252) 92%) ;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    font-weight: bold;
+    background-color: rgba(140, 144, 255, 0.553);
+    padding: 20px 20px;
+    border-radius: 17px 12px 0 0;
+}
+
+.app {
+    margin-top: -23px;
+    background-color: rgba(204, 205, 239, 0.553);
+    padding: 20px 20px;
+    border-radius:15px;
+}
