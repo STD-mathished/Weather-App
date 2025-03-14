@@ -7,6 +7,8 @@ let btn = document.querySelector("#submit-btn");
 let temp = document.querySelector("#temperature");
 let city = document.querySelector("#city");
 let choice = document.querySelector("#choice");
+let sunriseTime = document.querySelector("#sunrise");
+let sunsetTime = document.querySelector("#sunset");
 
 function getTemperature() {
     let cityValue = city.value;
@@ -14,7 +16,7 @@ function getTemperature() {
         .then((response) => response.json())
         .then((data) => {
             temp.innerHTML = `${data.current.temp_c}`;
-            choice.innerHTML = cityValue;
+            choice.innerHTML = `${data.location.name}`;
             console.log(choice.value);
             resetField();
         })
@@ -28,6 +30,20 @@ function resetField(){
     city.value = "";
 }
 
-//getting temperature
-//btn.addEventListener("click", getTemperature);
+function getSunriseInfo(){
+    let cityValue = city.value;
+    fetch(`${url}/astronomy.json?key=${key}&q=${cityValue}`)
+    .then((response) => response.json())
+    .then((data) => {
+        sunriseTime.innerHTML = `${data.astronomy.astro.sunrise}`;
+        sunsetTime.innerHTML = `${data.astronomy.astro.sunset}`;
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+}
+
+//getting temperature and sunrise info
 btn.addEventListener("click", getTemperature);
+btn.addEventListener("click", getSunriseInfo);

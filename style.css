@@ -15,11 +15,94 @@ h1 {
     background-color: rgba(140, 144, 255, 0.553);
     padding: 20px 20px;
     border-radius: 17px 12px 0 0;
+    border: 2px solid rgba(140, 144, 255, 0.553);
+}
+
+h1::before {
+    content: url(icons/icons8-météo.svg);
+    position: relative;
+    top: 8px;
+    right: 5px;
 }
 
 .app {
     margin-top: -23px;
     background-color: rgba(204, 205, 239, 0.553);
-    padding: 20px 20px;
+    padding: 40px 40px;
     border-radius:15px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.search-box input{
+    border-radius: 10px;
+    border: 1px solid rgba(140, 144, 255, 0.553);
+    padding: 10px;
+    
+}
+
+.search-box input::placeholder {
+    color: rgba(29, 31, 88, 0.553);
+    font-size: .8em;
+}
+
+.search-box input:focus {
+    outline: none;
+    color:rgba(29, 31, 88, 0.553) ;
+    background-color: rgba(140, 144, 255, 0.553);
+}
+
+button {
+    color: black;
+    background-color: rgba(140, 144, 255, 0.553);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: scale 0.2s, background-color 0.2s;
+
+}
+
+button:hover {
+    background-color: rgba(140, 144, 255, 0.753);
+    scale: 1.01;
+}
+
+.weather-box ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.city{
+    border: 2px solid black;
+    padding: 20px 10px;
+    border-radius: 10px;
+    background-color: rgba(169, 172, 255, 0.553);
+    animation: Bounce 3s reverse infinite;
+}
+
+@keyframes Bounce {
+    0%, 100% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    
+}
+
+
+
+.bold {
+    font-weight: bold;
+}
+.temperature {
+    font-size: 1.5em;
+}
+
+.choice, .sunrise, .sunset {
+    font-size: 1.2em;
 }
