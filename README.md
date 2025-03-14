@@ -14,3 +14,4 @@ Technologies Used
 Frontend: HTML, CSS, JavaScript
 
 API: Weather data sourced from https://www.weatherapi.com/
+In order to use it please generate an API key by creeating an account and insert it in the ./config.js file
